@@ -67,9 +67,7 @@ Paper presentations will take place in Weeks 5 and 6 (if needed, presentations o
 -->
 ## Introduction to Git
 
-Make sure that you are familiar with the following concepts: `commit`, `push`, `pull`, `clone`, `fork`.
-
-Tutorials:
+Make sure that you are familiar with the following concepts: `commit`, `push`, `pull`, `clone`, `fork`. Tutorials:
 - [gittutorial](https://git-scm.com/docs/gittutorial)
 - [git - the simple guide](https://rogerdudler.github.io/git-guide/)
 
@@ -87,22 +85,19 @@ CNV requires a Linux development environment. We strongly recommend using the VM
 
 ## Overview
 
-These guide will help to configure your laptop or desktop properly for the your work in the CNV Course. It will setup an optimized (smaller, hence faster) virtual machine bundled with only the tools required for the CNV course. The instructions are generally suitable for host machines running the following Operating Systems (i.e. your already existing OS):
-- Microsoft Windows from version 10 up.
-- Apple macOS from versions 10.13 ’High Sierra’ up.
-- Debian-based Linux, such as Ubuntu (recommended) from versions 16.04 LTS up.
+It will setup an optimized (smaller, hence faster) virtual machine bundled with only the tools required for the CNV course.
 
 ---
 
 ## Preliminary Set Up of the Host Environment
 
-This section describes the minimum setup of the CNV virtualized environment for systems running Windows, macOS and Linux. We will use the following tools or programs: 
+This section describes the minimum setup of the CNV virtualized environment. We will use the following tools or programs: 
 - **Vagrant**: is an open-source product for building and maintaining portable virtual development environments.
 - **VirtualBox**: Oracle VM VirtualBox is a free and open-source hosted hypervisor for x86 virtualization.
 
 ### Installation For Windows 10 systems
 
-For Virtualbox, go to the [Downloads page](https://www.virtualbox.org/wiki/Downloads) and select the Windows hosts latest binaries. The Oracle VM VirtualBox installation can be started by double-clicking on the executable file you downloaded, and then follow the instructions from the installer dialog. If you wish to use VirtualBox on Windows, you must ensure that Hyper-V is not enabled. You can also disable it by going through the Windows system settings:
+For Virtualbox, go to the [Downloads page](https://www.virtualbox.org/wiki/Downloads) and select the Windows hosts latest binaries. If you wish to use VirtualBox on Windows, you must ensure that Hyper-V is not enabled. You can also disable it by going through the Windows system settings:
 
 1) Right click on the Windows button and select 'Apps and Features';
 2) Select Turn Windows Features on or off;
@@ -111,23 +106,6 @@ For Virtualbox, go to the [Downloads page](https://www.virtualbox.org/wiki/Downl
 You might have to reboot your machine for the changes to take effect
 
 For Vagrant, go to the [Downloads page](https://www.vagrantup.com/downloads) and select the WINDOWS installer of the latest version of Vagrant for your system.
-
-### Installation for macOS systems
-
-For Virtualbox, go to the [Downloads page](https://www.virtualbox.org/wiki/Downloads) and select the OS X hosts latest binaries. For Mac OS X hosts, Oracle VM VirtualBox ships in a dmg disk image file. Perform the following steps to install on a Mac OS X host:
-
-1) Double-click on the dmg file, to mount the contents;
-2) A window opens, prompting you to double-click on the VirtualBox.pkg installer file displayed in that window;
-3) This starts the installer, which enables you to select where to install Oracle VM VirtualBox;
-4) An Oracle VM VirtualBox icon is added to the Applications folder in the Finder.
-
-For Vagrant, go to the [Downloads page](https://www.vagrantup.com/downloads) and select the MAC OS X installer of the latest version of Vagrant for your system.
-
-### Installation for Linux systems
-
-For Virtualbox, go to the [Downloads page](https://www.virtualbox.org/wiki/Downloads) and then the Linux distribution page and there follow the instructions for your Linux distribution.
-
-For Vagrant, go to the [Downloads page](https://www.vagrantup.com/downloads) and select the LINUX (or DEBIAN) installer of the latest version of Vagrant for your system.
 
 ## Creating and using the Virtual Machine for the Lab
 
@@ -141,13 +119,11 @@ To get started you need to position the creation of the VM in an adequate workin
 
 There download the following files: [cnv-provision.sh](cnv-provision.sh), and [Vagrantfile](Vagrantfile) which will allow a smooth setup of the system.
 
-To start the VM, open a Terminal (in Linux or macOS) or a Powershell console in Windows (if command prompt does not work) and go to the working folder. In there, start the VM with the following command (equivalent to Power Up or Start):
+`vagrant up` - start/power up the VM in Terminal (or Powershell) inside the working folder
 
-`vagrant up`
+The first time you start the VM it will in fact build it, and so it may take up a few minutes, depending on the speed of the host system and of your Internet connection. When finished the VM is booted.
 
-The first time you start the VM it will in fact build it, and so it may take up a few minutes, depending on the speed of the host system and of your Internet connection. When finished the VM is booted and you can establish sessions with the VM using the following command (secure shell, without needing username or password):
-
-`vagrant ssh`
+`vagrant ssh` - establish sessions with the VM using the following command (secure shell, without needing username or password)
 
 For convenience, you can issue this command in as many shell/windows/sessions as you want so that you can have multiple windows logged to your VM. The session is established and you will get the machine prompt similar to the following:
 
@@ -165,11 +141,9 @@ logout
 Connection to 127.0.0.1 closed.
 </pre></code>
 
-In order to stop the Virtual Machine and to verify the global state of all active VM environments (managed by Vagrant) on the system, you can use the following commands (the first is equivalent to a shutdown):
+`vagrant halt` - to stop the Virtual Machine (the first is equivalent to a shutdown)
 
-`vagrant halt`
-
-`vagrant global-status`
+`vagrant global-status` - to verify the global state of all active VM environments (managed by Vagrant) on the system.
 
 The last command allows you to confirm that the statuses of the VMs is powered off. The next time you want to work with the VM again, then use the command (the VM will boot in less than a minute, typically):
 
