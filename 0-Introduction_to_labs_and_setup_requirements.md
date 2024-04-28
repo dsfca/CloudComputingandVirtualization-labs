@@ -22,9 +22,8 @@ Make sure that you are familiar with the following concepts: `commit`, `push`, `
 ---------------------------------------------------------------------
 Git commands:
 
-<code>
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-</code>
+<code>git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY</code>
+
 <code>git config --global user.name "Mona Lisa"</code> (set a git username - for every repository)
 
 <code>git config --global user.email "@"</code>
