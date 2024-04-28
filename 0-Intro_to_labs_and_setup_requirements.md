@@ -31,6 +31,8 @@ Git commands:
 
 <code>git config user.name</code> (check)
 
+`git config pull.rebase false` (merge changes)
+
 ## CNV Linux Environment
 We provide a light and optimized VM with all the software necessary to run CNV labs and project. This VM is based on Vagrant and VirtualBox.
 
