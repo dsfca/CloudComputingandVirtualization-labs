@@ -10,9 +10,9 @@
 
 - We will use it in this course to learn about “Infrastructure-as-as-Service” (IaaS) platforms and develop the course project;
 
-- The goal of this lab is to learn how to set up a basic auto-scaling group (auto scaler) with a load balancer:
+- The goal of this lab is to learn how to set up a basic auto-scaling group (**auto scaler**) with a **load balancer**:
 
-<img src="res/autoscaling.png" alt="autoscaling-diagram" width="400"/>
+<img src="autoscaling.png" alt="autoscaling-diagram" width="400"/>
 
 ---
 
