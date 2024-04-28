@@ -16,7 +16,8 @@
     - Checkpoint evaluation and feedback;
 -->
 ## Introduction to Git
-Make sure that you are familiar with the following concepts: `commit`, `push`, `pull`, `clone`, `fork`. Tutorials: [gittutorial](https://git-scm.com/docs/gittutorial), [git - the simple guide](https://rogerdudler.github.io/git-guide/)
+Make sure that you are familiar with the following concepts: `commit`, `push`, `pull`, `clone`, `fork`.
+Tutorials: [gittutorial](https://git-scm.com/docs/gittutorial), [git - the simple guide](https://rogerdudler.github.io/git-guide/)
 
 Git commands:
 
