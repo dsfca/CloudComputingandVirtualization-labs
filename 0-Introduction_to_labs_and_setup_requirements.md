@@ -22,7 +22,7 @@ Make sure that you are familiar with the following concepts: `commit`, `push`, `
 ---------------------------------------------------------------------
 Git commands:
 
-<code>git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY</code>
+`git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY`
 
 <code>git config --global user.name "Mona Lisa"</code> (set a git username - for every repository)
 
@@ -42,7 +42,6 @@ CNV requires a Linux development environment. We strongly recommend using the VM
 - install the software manually (for Linux and Mac users).
 
 ## Tutorial
-## Overview
 
 It will setup an optimized (smaller, hence faster) virtual machine bundled with only the tools required for the CNV course.
 
