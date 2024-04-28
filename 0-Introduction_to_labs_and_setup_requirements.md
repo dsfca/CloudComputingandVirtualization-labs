@@ -19,6 +19,15 @@
 Make sure that you are familiar with the following concepts: `commit`, `push`, `pull`, `clone`, `fork`. Tutorials:
 - [gittutorial](https://git-scm.com/docs/gittutorial)
 - [git - the simple guide](https://rogerdudler.github.io/git-guide/)
+---------------------------------------------------------------------
+Git commands:
+<code>
+git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+</code>
+git config --global user.name "Mona Lisa" (set a git username - for every repository)
+git config --global user.email "@"
+git config user.name "Mona Lisa" (set a git username - for single repository - Change the current working directory to the local repository where you want to configure the name that is associated with your Git commits.) 
+git config user.name (check)
 
 ## CNV Linux Environment
 We provide a light and optimized VM with all the software necessary to run CNV labs and project. This VM is based on Vagrant and VirtualBox.
