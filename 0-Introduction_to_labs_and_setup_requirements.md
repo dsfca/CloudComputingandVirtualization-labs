@@ -21,12 +21,16 @@ Make sure that you are familiar with the following concepts: `commit`, `push`, `
 - [git - the simple guide](https://rogerdudler.github.io/git-guide/)
 ---------------------------------------------------------------------
 Git commands:
+
 <code>
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 </code>
 <code>git config --global user.name "Mona Lisa"</code> (set a git username - for every repository)
+
 <code>git config --global user.email "@"</code>
+
 <code>git config user.name "Mona Lisa"</code> (set a git username - for single repository - Change the current working directory to the local repository where you want to configure the name that is associated with your Git commits.) 
+
 <code>git config user.name</code> (check)
 
 ## CNV Linux Environment
