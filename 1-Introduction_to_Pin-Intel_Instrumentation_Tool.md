@@ -22,7 +22,7 @@ Instrumentation is performed once by registered callback functions that are invo
 
 Analysis is performed every time a piece of instrumented code is executed and analysis functions are invoked. Successive invocations of analysis code allows aggregation of results during program execution.
 
-<img src="pin-diagram.jpg" width="500")>
+<img src="pin-diagram.jpg" width="500">
 
 
 Pin is invoked with the following syntax:
