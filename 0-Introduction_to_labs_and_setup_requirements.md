@@ -24,10 +24,10 @@ Git commands:
 <code>
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 </code>
-git config --global user.name "Mona Lisa" (set a git username - for every repository)
-git config --global user.email "@"
-git config user.name "Mona Lisa" (set a git username - for single repository - Change the current working directory to the local repository where you want to configure the name that is associated with your Git commits.) 
-git config user.name (check)
+<code>git config --global user.name "Mona Lisa"</code> (set a git username - for every repository)
+<code>git config --global user.email "@"</code>
+<code>git config user.name "Mona Lisa"</code> (set a git username - for single repository - Change the current working directory to the local repository where you want to configure the name that is associated with your Git commits.) 
+<code>git config user.name</code> (check)
 
 ## CNV Linux Environment
 We provide a light and optimized VM with all the software necessary to run CNV labs and project. This VM is based on Vagrant and VirtualBox.
