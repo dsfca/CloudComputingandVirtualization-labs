@@ -22,7 +22,7 @@ Instrumentation is performed once by registered callback functions that are invo
 
 Analysis is performed every time a piece of instrumented code is executed and analysis functions are invoked. Successive invocations of analysis code allows aggregation of results during program execution.
 
-![pin-diagram](https://github.com/dsfca/CloudComputingandVirtualization-labs/assets/55883117/45e90c10-fae3-46ce-834d-8ba7332b516f)
+![pin-diagram](https://github.com/dsfca/CloudComputingandVirtualization-labs/assets/55883117/45e90c10-fae3-46ce-834d-8ba7332b516f | width=500)
 
 
 Pin is invoked with the following syntax:
