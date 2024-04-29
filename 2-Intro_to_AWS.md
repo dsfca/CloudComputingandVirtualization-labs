@@ -30,20 +30,20 @@ Then `scp -i mykeypair.pem WebServer.java ec2-user@<public IP>:` - copies the we
 `sudo nano /etc/systemd/system/rc-local.service`
 
 Write inside: <br>
-<code>
+```
 [Unit]
  Description=/etc/rc.local Compatibility
  ConditionPathExists=/etc/rc.local <br>
-\[Service]
+[Service]
  Type=forking
  ExecStart=/etc/rc.local start
  TimeoutSec=0
  StandardOutput=tty
  RemainAfterExit=yes
  SysVStartPriority=99
-\[Install] <br>
+[Install] <br>
  WantedBy=multi-user.target
-</code>
+```
 
 Afterwards, activate auto-start with the followign commands:
 
@@ -51,16 +51,15 @@ Afterwards, activate auto-start with the followign commands:
 
 And add inside:
 
-<code>
+```
 #!/bin/sh -e
 java -cp /home/ec2-user WebServer &> /tmp/webserver.log
-</code>
+```
 
-> java: This is the command to run Java programs. <br>
-> -cp /home/ec2-user: This specifies the classpath where Java should look for classes and resources. In this case, it's telling Java to look in the /home/ec2-user directory for the necessary files. <br>
-> WebServer: This is the name of the Java program (presumably a class with a main method) that you want to execute. <br>
-> &>: This is a redirection operator in the shell. It redirects both standard output (stdout) and standard error (stderr) to the specified file. <br>
-> /tmp/webserver.log: This is the path to the log file where the output and error messages from the Java program will be written. <br>
+> **java** ---> This is the command to run Java programs. <br>
+> **-cp /home/ec2-user** ---> This specifies the classpath where Java should look for classes and resources. In this case, it's telling Java to look in the /home/ec2-user directory for the necessary files. <br>
+> **&>** ---> This is a redirection operator in the shell. It redirects both standard output (stdout) and standard error (stderr) to the specified file. <br>
+> **/tmp/webserver.log** ---> This is the path to the log file where the output and error messages from the Java program will be written. <br>
 
 <code>
 sudo chmod +x /etc/rc.local   # make it executable
