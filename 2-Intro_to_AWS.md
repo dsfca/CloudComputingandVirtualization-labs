@@ -56,16 +56,15 @@ And add inside:
 java -cp /home/ec2-user WebServer &> /tmp/webserver.log
 ```
 
-> **java** ---> This is the command to run Java programs. <br>
 > **-cp /home/ec2-user** ---> This specifies the classpath where Java should look for classes and resources. In this case, it's telling Java to look in the /home/ec2-user directory for the necessary files. <br>
 > **&>** ---> This is a redirection operator in the shell. It redirects both standard output (stdout) and standard error (stderr) to the specified file. <br>
 > **/tmp/webserver.log** ---> This is the path to the log file where the output and error messages from the Java program will be written. <br>
 
-<code>
+```
 sudo chmod +x /etc/rc.local   # make it executable
 sudo systemctl enable rc-local.service  ("Created symlink /etc/systemd/system/multi-user.target.wants/rc-local.service → /etc/systemd/system/rc-local.service.")<br>
 sudo systemctl start  rc-local.service
-</code>
+```
 
 - **systemctl** is the systemd command for controlling how services start on a Linux system. A service can be enabled, disabled, or masked, and it can be configured to start at boot, on demand, manually, or prevented from starting under any circumstances.
 (This is needed to be able to use rc.local for starting applications at the machine boot time.)
