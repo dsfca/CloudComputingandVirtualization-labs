@@ -16,20 +16,26 @@
 
 When establishing `ssh -i ~/Desktop/mykeypair.pem ec2-user@3.80.227.52` - the host is added to  ~/.ssh/known_hosts as
 `3.80.227.52 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB2PFgxgkPQrFtLi0RoKq3kRsxU4H8bI1Qcagu/qoYsb`
+
 (Exit connection)
+
 Then `scp -i mykeypair.pem WebServer.java ec2-user@<public IP>:` - copies the webserver code into the instance
 
 `sudo yum update`
+
 `sudo yum install java-11-amazon-corretto-devel.x86_64 -y` - installed in "/usr/lib/jvm" (java, jvm-common, jvm-private)
+
 `javac WebServer.java`
-`sudo nano /etc/systemd/system/rc-local.service``
+
+`sudo nano /etc/systemd/system/rc-local.service`
+
 Write inside:
 <code>
 [Unit]
  Description=/etc/rc.local Compatibility
  ConditionPathExists=/etc/rc.local
 
-[Service]
+\[Service]
  Type=forking
  ExecStart=/etc/rc.local start
  TimeoutSec=0
@@ -37,7 +43,7 @@ Write inside:
  RemainAfterExit=yes
  SysVStartPriority=99
 
-[Install]
+\[Install]
  WantedBy=multi-user.target
 </code>
 Afterwards, activate auto-start with the followign commands:
