@@ -12,7 +12,68 @@
 
 - The goal of this lab is to learn how to set up a basic auto-scaling group (**auto scaler**) with a **load balancer**:
 
-<img src="autoscaling.png" alt="autoscaling-diagram" width="400"/>
+<img src="imgs/autoscaling.png" alt="autoscaling-diagram" width="400"/>
+
+When establishing `ssh -i ~/Desktop/mykeypair.pem ec2-user@3.80.227.52` - the host is added to  ~/.ssh/known_hosts as
+`3.80.227.52 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB2PFgxgkPQrFtLi0RoKq3kRsxU4H8bI1Qcagu/qoYsb`
+(Exit connection)
+Then `scp -i mykeypair.pem WebServer.java ec2-user@<public IP>:` - copies the webserver code into the instance
+
+`sudo yum update`
+`sudo yum install java-11-amazon-corretto-devel.x86_64 -y` - installed in "/usr/lib/jvm" (java, jvm-common, jvm-private)
+`javac WebServer.java`
+`sudo nano /etc/systemd/system/rc-local.service``
+Write inside:
+<code>
+[Unit]
+ Description=/etc/rc.local Compatibility
+ ConditionPathExists=/etc/rc.local
+
+[Service]
+ Type=forking
+ ExecStart=/etc/rc.local start
+ TimeoutSec=0
+ StandardOutput=tty
+ RemainAfterExit=yes
+ SysVStartPriority=99
+
+[Install]
+ WantedBy=multi-user.target
+</code>
+Afterwards, activate auto-start with the followign commands:
+<code>
+sudo touch /etc/rc.local      # create rc.local file
+</code>
+And add inside:
+
+`#!/bin/sh -e`
+`java -cp /home/ec2-user WebServer &> /tmp/webserver.log`
+
+> java: This is the command to run Java programs.
+> -cp /home/ec2-user: This specifies the classpath where Java should look for classes and resources. In this case, it's telling Java to look in the /home/ec2-user directory for the necessary files.
+> WebServer: This is the name of the Java program (presumably a class with a main method) that you want to execute.
+> &>: This is a redirection operator in the shell. It redirects both standard output (stdout) and standard error (stderr) to the specified file.
+/tmp/webserver.log: This is the path to the log file where the output and error messages from the Java program will be written.
+
+<code>
+sudo chmod +x /etc/rc.local   # make it executable
+sudo systemctl enable rc-local.service  ("Created symlink /etc/systemd/system/multi-user.target.wants/rc-local.service → /etc/systemd/system/rc-local.service.")<br>
+sudo systemctl start  rc-local.service
+</code>
+
+**systemctl** is the systemd command for controlling how services start on a Linux system. A service can be enabled, disabled, or masked, and it can be configured to start at boot, on demand, manually, or prevented from starting under any circumstances.
+(This is needed to be able to use rc.local for starting applications at the machine boot time.)
+
+(Reboot AWS Instance & ensure WebServer is up)
+
+**VM image** is a pre-configured **virtual machine template** that is used to create instances within the Amazon Elastic Compute Cloud (EC2) service. In simpler terms, an image is like a snapshot or a blueprint of a virtual server that can be replicated easily.
+
+**Load balancer** - increase the fault tolerance of your systems by automatically detecting server problems and redirecting client traffic to available servers.
+
+**VM Scaling (Auto scaler)** - monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. 
+
+IaaS
+
 
 ---
 
